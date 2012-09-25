@@ -10,6 +10,20 @@
 
     More info at: http://lesselements.com
 -----------------------------------------------------*/
+.border-sizing(@v) {
+    -o-box-sizing:      @v;
+    -ms-box-sizing:     @v;
+    -moz-box-sizing:    @v;
+    -webkit-box-sizing: @v;
+    box-sizing:         @v;
+}
+ 
+.transition(@type: all, @duration: 1s, @effect: linear, @delay: 0ms) {
+    -moz-transition:     @type @duration @effect @delay;
+    -webkit-transition:  @type @duration @effect @delay;
+    -o-transition:       @type @duration @effect @delay;
+    transition:          @type @duration @effect @delay;
+}
 
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
@@ -92,11 +106,7 @@
   -moz-transform:scale(@ratio);
   transform:scale(@ratio);
 }
-.transition(@duration:0.2s, @ease:ease-out) {
-  -webkit-transition: all @duration @ease;
-  -moz-transition: all @duration @ease;
-  transition: all @duration @ease;
-}
+
 .inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
   -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
   -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
